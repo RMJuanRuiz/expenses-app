@@ -1,5 +1,6 @@
 import './App.scss';
 import { Expenses } from './components/Expenses';
+import { ExpenseData, NewExpense } from './components/NewExpense';
 
 const App = () => {
   const expenses = [
@@ -24,8 +25,13 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expenseData: ExpenseData) => {
+    console.log('fromapp', expenseData);
+  };
+
   return (
     <>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </>
   );
